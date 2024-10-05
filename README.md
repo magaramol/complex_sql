@@ -10,3 +10,31 @@ This repository contains a collection of complex SQL problems along with their s
 
 Transform match results from the ICC World Cup into a summary table showing each team's total wins and losses. The input data is structured as follows:
 
+#### input table
+
+``` 
++-----------+-----------+---------+
+| Team_1   | Team_2   | Winner  |
++-----------+-----------+---------+
+|           |           |         |
+|           |           |         |
+|           |           |         |
+|           |           |         |
+|           |           |         |
++-----------+-----------+---------+
+```
+
+#### And for the summary table:
+
+```
++--------+------+-------+
+| Team   | Win  | Lose  |
++--------+------+-------+
+|        |      |       |
+|        |      |       |
+|        |      |       |
+|        |      |       |
+|        |      |       |
+|        |      |       |
++--------+------+-------+
+```
