@@ -38,3 +38,38 @@ Transform match results from the ICC World Cup into a summary table showing each
 |        |      |       |
 +--------+------+-------+
 ```
+
+
+
+### Customer Orders Problem
+
+**Problem Statement:**
+
+You have a table called `customer_orders` that tracks customer orders. Each order has an `order_id`, `customer_id`, `order_date`, and `order_amount`. Your task is to transform this data to calculate the number of repeat customers and new customers for each day.
+
+#### Input Table
+
+```
++-----------+-------------+------------+--------------+
+| order_id  | customer_id | order_date | order_amount |
++-----------+-------------+------------+--------------+
+|           |             |            |              |
+|           |             |            |              |
+|           |             |            |              |
+|           |             |            |              |
+|           |             |            |              |
++-----------+-------------+------------+--------------+
+```
+
+#### Expected Output
+
+```
++------------+------------------+--------------+
+|    day     | repeat cx count  | new cx count |
++------------+------------------+--------------+
+|            |                  |              |
+|            |                  |              |
+|            |                  |              |
++------------+------------------+--------------+
+```
+
