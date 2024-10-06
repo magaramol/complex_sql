@@ -188,3 +188,125 @@ The expected output should summarize the individuals who have a total friend sco
 ### Task
 
 Develop a SQL query to analyze the `person` and `friend` tables, compute the desired statistics, and format the output as specified in the "Expected Output Table." This will involve aggregating data to count the number of friends and summing their scores for each individual, filtering those with a total friend score greater than 100.
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Daily Trip Performance Report for Non-Banned Users
+
+
+### Problem Statement:
+
+You are required to generate a report summarizing the daily performance of a ride-hailing service. The service has two key entities: `Trips` and `Users`. Your task is to analyze the trips based on whether the client and driver are not banned and calculate metrics related to incomplete trips (trips that are not marked as 'completed').
+
+#### Task:
+- Write an SQL query to retrieve the following information for each day (`request_at`):
+  1. **Total Trips**: The number of trips recorded on each day.
+  2. **Incomplete Trips**: The number of trips where the status is not 'completed'.
+  3. **Percentage of Incomplete Trips**: The ratio of incomplete trips to total trips.
+  
+- You will use the `Trips` table for trip details and the `Users` table to determine if the clients or drivers involved in the trips are banned.
+  
+#### Requirements:
+1. Only include trips where both the client and the driver are not banned.
+2. Join the `Users` table twice—once to check the client status and once for the driver status.
+3. Calculate the percentage of incomplete trips as a proportion of total trips for each day.
+
+### Input Tables:
+
+**Trips Table**
+```
++----+-----------+-----------+---------+--------------------+------------+
+| id | client_id | driver_id | city_id |       status        | request_at |
++----+-----------+-----------+---------+--------------------+------------+
+|    |           |           |         |                    |            |
+|    |           |           |         |                    |            |
+|    |           |           |         |                    |            |
++----+-----------+-----------+---------+--------------------+------------+
+```
+
+**Users Table**
+```
++----------+--------+-------+
+| users_id | banned | role  |
++----------+--------+-------+
+|          |        |       |
+|          |        |       |
+|          |        |       |
++----------+--------+-------+
+```
+
+### Expected Output:
+```
++------------+-------------+-----------------+------------------+
+|  request   | total_trips | incomplete_trips | incomplete_percent|
++------------+-------------+-----------------+------------------+
+|            |             |                 |                  |
+|            |             |                 |                  |
+|            |             |                 |                  |
++------------+-------------+-----------------+------------------+
+```
+
+
+
+-- ### Problem Statement:
+
+-- You are tasked with ranking players within groups based on their total score from matches played. The `players` table contains information about which group each player belongs to, and the `matches` table contains the results of head-to-head matches between players. Your objective is to determine the top-ranked player from each group based on their cumulative match scores.
+
+-- #### Task:
+-- - Write an SQL query to:
+--   1. Calculate the total score for each player by summing up the scores from the `matches` table.
+--   2. Rank players within their respective groups based on their total score.
+--   3. Retrieve only the top-ranked player from each group.
+
+-- - The `matches` table records both the first player's and second player's scores for each match, and you will need to aggregate the scores from both perspectives.
+
+-- #### Requirements:
+-- 1. Combine the `players` table and the `matches` table to calculate the cumulative score for each player.
+-- 2. Use window functions to rank the players within each group based on their total score, with the highest score receiving the top rank.
+-- 3. Output the top-ranked player from each group.
+
+-- ### Input Tables:
+
+-- **Players Table**
+-- ```
+-- +-----------+----------+
+-- | player_id | group_id |
+-- +-----------+----------+
+-- |           |          |
+-- |           |          |
+-- |           |          |
+-- +-----------+----------+
+-- ```
+
+-- **Matches Table**
+-- ```
+-- +----------+-------------+--------------+-------------+--------------+
+-- | match_id | first_player | second_player| first_score | second_score |
+-- +----------+-------------+--------------+-------------+--------------+
+-- |          |             |              |             |              |
+-- |          |             |              |             |              |
+-- |          |             |              |             |              |
+-- +----------+-------------+--------------+-------------+--------------+
+-- ```
+
+-- ### Expected Output:
+-- ```
+-- +-----------+----------+-------+
+-- | player_id | group_id | rank  |
+-- +-----------+----------+-------+
+-- |           |          |       |
+-- |           |          |       |
+-- |           |          |       |
+-- +-----------+----------+-------+
+-- ```
+
